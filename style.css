@@ -1,69 +1,78 @@
-/* Global Styles */
-body {
-  font-family: Arial, sans-serif;
+/* Reset browser defaults */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  box-sizing: border-box;
 }
 
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
+  background-color: #222;
   color: white;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 header .logo h1 {
-  margin: 0;
+  font-size: 1.8em;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
+  font-weight: bold;
 }
 
 .search-bar {
   padding: 0.5em;
-  margin-left: 1em;
-  border-radius: 4px;
   border: none;
+  border-radius: 5px;
 }
 
+/* Banner Section */
 #banner {
   text-align: center;
-  background-color: #444;
+  background: url('banner.jpg') no-repeat center center/cover;
   color: white;
-  padding: 2em;
+  padding: 4em 0;
 }
 
 #banner h2 {
-  margin: 0;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
 }
 
 #banner button {
-  padding: 0.7em 1.5em;
-  margin-top: 1em;
   background-color: #fcbf49;
   border: none;
-  color: black;
+  padding: 0.8em 1.5em;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
+/* Product Section */
 #products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em;
   padding: 2em;
-  margin: 1em;
 }
 
 .product {
@@ -79,23 +88,26 @@ nav ul li a {
   border-radius: 8px;
 }
 
-.product button {
-  padding: 0.5em 1em;
-  background-color: #fcbf49;
-  border: none;
-  color: black;
-  border-radius: 5px;
-  cursor: pointer;
+.product h3 {
+  margin: 0.5em 0;
 }
 
+.product button {
+  background-color: #fcbf49;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Footer Section */
 footer {
-  background-color: #333;
+  background-color: #222;
   color: white;
   text-align: center;
   padding: 1em;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+  position: relative;
 }
 
 footer .social-icons {
@@ -110,4 +122,21 @@ footer .social-icons img {
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #banner h2 {
+    font-size: 2em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
 }
